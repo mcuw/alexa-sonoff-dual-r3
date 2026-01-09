@@ -1,32 +1,13 @@
-/**
- * This example shows how to use a built-in LED with low energy consumption
- *
- * used features:
- * - blink built-in LED
- * - Deep-Sleep mode
- *
- * see https://docs.arduino.cc/built-in-examples/basics/Blink
- */
-#include <Arduino.h>
+#include "Arduino.h"
 
-#define uS_TO_S_FACTOR 1000000
-
-void setup()
-{
-  Serial.begin(115200);
-  pinMode(LED_BUILTIN, OUTPUT);
-
-  Serial.println("switch LED on");
-  digitalWrite(LED_BUILTIN, LOW); // depend on LED circuit, can also be HIGH
-  delay(200);
-
-  Serial.println("switch LED off");
-  digitalWrite(LED_BUILTIN, HIGH);
-  esp_sleep_enable_timer_wakeup(2 * uS_TO_S_FACTOR); // 2s
-  esp_deep_sleep_start();
+void setup() {
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, HIGH); // off
 }
 
-void loop()
-{
-  // never reach here
+void loop() {
+    digitalWrite(LED_BUILTIN, LOW); // on
+    delay(200);
+    digitalWrite(LED_BUILTIN, HIGH); // off
+    delay(200);
 }
