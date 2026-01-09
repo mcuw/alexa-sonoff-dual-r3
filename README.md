@@ -1,17 +1,19 @@
-# Alexa with Sonoff Dual R3
+# Alexa with Sonoff Dual R3 project
 
 ## Description
 
 This project controls a Sonoff Dual R3 switch with Alexa commands. The integrated microcontroller is a espressif [esp32](https://www.espressif.com/en/products/socs/esp32).
 
+Only for professional electric experts because handling with high voltage can be quite dangerous. No warranty! Use the project at your own risk..
+
+## Features
+
+- Uses Platformio
+- Example code
+
 ## Prerequisites
 
-- [VSCode](https://code.visualstudio.com/) IDE
-
-- [pioarduino IDE](#Pioarduino) for [VSCode](https://code.visualstudio.com/) IDE
-
 - Sonoff Dual R3, 4MB flash, 15A Max, Wi-Fi 2.4 GHz
-
 - Alexa
 
 ## Flashing
@@ -23,15 +25,10 @@ This project controls a Sonoff Dual R3 switch with Alexa commands. The integrate
 |RX|TX|
 |GND|GND|
 
-1. Keep pushing the button on the sonoff then connect the USB Adapter
-
-2. You can release the button again and can start with the flashing
-
-3. After flashing disconnect and connect the Serial adapter again
-
-## Pioarduino
-
-Install the [pioarduino IDE](https://marketplace.visualstudio.com/items?itemName=pioarduino.pioarduino-ide) extension which replaces the [PlatformIO IDE](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) extension.
+1. Disconnect your SonOff from high power electric
+2. Keep pushing the button on the sonoff then connect the USB Adapter
+3. You can release the button again and can start with the flashing
+4. After flashing disconnect and connect the Serial adapter again
 
 ## Getting started
 
@@ -39,7 +36,7 @@ Install the [pioarduino IDE](https://marketplace.visualstudio.com/items?itemName
 
 - clone this project
 ```sh
-git clone https://github.com/vanvuongngo/alexa-sonoff-dual-r3.git
+git clone https://github.com/mcuw/alexa-sonoff-dual-r3.git
 ```
 
 - open with [VSCode](https://code.visualstudio.com/) IDE
@@ -49,11 +46,11 @@ git clone https://github.com/vanvuongngo/alexa-sonoff-dual-r3.git
 <img src="assets/upload_option.png" alt="upload icon on the toolbar">
 
 
-### Variant B - use the precompiled firmware:
+### Variant B - no software installation needed:
 
 - download the firmware see [Releases](#Releases)
 
-- upload the firmware to the Sonoff Dual R3
+- upload the firmware to the Sonoff Dual R3 with [ESPConnect](https://mcuw.github.io/ESPConnect/)
 
 ### Configuration after firmware download
 
@@ -74,24 +71,24 @@ git clone https://github.com/vanvuongngo/alexa-sonoff-dual-r3.git
 
 ## Pinouts
 
-GPIO13: Status LED (blue, inverted)
+**GPIO13**: Status LED (blue, inverted)
 
-GPIO00: Push Button (inverted)
+**GPIO00**: Push Button (inverted)
 
-GPIO27: Relay 1 / LED 1 (red)
+**GPIO27**: Relay 1 / LED 1 (red)
 
-GPIO14: Relay 2 / LED 2 (red)
+**GPIO14**: Relay 2 / LED 2 (red)
 
-GPIO32: Switch 1 (inverted)
+**GPIO32**: Switch 1 (inverted)
 
-GPIO33: Switch 2 (inverted)
+**GPIO33**: Switch 2 (inverted)
 
 
 For the Sonoff Dual R3 (PCB versions 1.x, 2.x), additional pins are used for power monitoring:
 
-GPIO25: Power sensor UART Tx
+**GPIO25**: Power sensor UART Tx
 
-GPIO26: Power sensor UART Rx
+**GPIO26**: Power sensor UART Rx
 
 ## Power Monitoring
 
@@ -136,15 +133,6 @@ You can write your changes in the [CHANGELOG.md](CHANGELOG.md) before you create
 ## Releases
 
 Firmwares see under [Releases](https://github.com/vanvuongngo/alexa-sonoff-dual-r3/releases) on the right sidemenu.
-
-## Espressif32 platform
-
-The `Espressif32` platform is not supporting the latest microcontroller models. Because of that the new community fork called [Pioarduino](https://github.com/pioarduino/platform-espressif32) started, it is compatible with [Espressif32 for PlatformIO](https://github.com/platformio/platform-espressif32) and supports boards like ESP32-C6, ESP32-H2, and ESP32-P4 and others.
-If you want to keep using the old way then switch to the `espressif32-platform` branch:
-
-```sh
-git checkout espressif32-platform
-```
 
 ## Disclaimer
 
