@@ -9,9 +9,9 @@
 #include <HTTPUpdate.h>
 #include <WiFiClientSecure.h>
 #include <WiFiManager.h>
+#include "pinout.h"
 
 #define FirmwareVersion 8
-#define BUTTON GPIO_NUM_0
 
 WiFiManager wifiManager;
 bool connected = false;
