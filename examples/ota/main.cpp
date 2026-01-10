@@ -23,7 +23,6 @@ void setup()
 {
   Serial.begin(115200);
 
-  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(BUTTON, INPUT);
 
   Serial.print(F("Active firmware version: "));
