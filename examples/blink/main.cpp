@@ -1,13 +1,14 @@
 #include "Arduino.h"
+#include "pinout.h"
 
 void setup() {
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, HIGH); // off
+    pinMode(LED, OUTPUT);
+    digitalWrite(LED, HIGH); // off
 }
 
 void loop() {
-    digitalWrite(LED_BUILTIN, LOW); // on
+    digitalWrite(LED, LOW); // on
     delay(200);
-    digitalWrite(LED_BUILTIN, HIGH); // off
+    digitalWrite(LED, HIGH); // off
     delay(200);
 }
